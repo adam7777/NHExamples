@@ -13,13 +13,6 @@ namespace NHibernateProject
     {
         private const string DbFile = "demo.db";
 
-        //MsSqlConfiguration.MsSql2005
-        //  .ConnectionString(c => c
-        //.Server("my-server")
-        //.Database("database-name")
-        //.Username("jamesGregory")
-        //.Password("password1"))
-
         private static ISessionFactory CreateSessionFactory()
         {
             return Fluently.Configure()
