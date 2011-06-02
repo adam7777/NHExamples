@@ -81,11 +81,16 @@
   <ItemGroup>
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\File.cs" />
+    <Compile Include="Entities\MusicCollection.cs" />
+    <Compile Include="Entities\MusicFile.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Store.cs" />
-    <Compile Include="Mappings\EmployeeMap.cs" />
-    <Compile Include="Mappings\ProductMap.cs" />
-    <Compile Include="Mappings\StoreMap.cs" />
+    <None Include="Mappings\EmployeeMap.cs" />
+    <Compile Include="Mappings\MusicCollectionMap.cs" />
+    <Compile Include="Mappings\MusicFileMap.cs" />
+    <None Include="Mappings\ProductMap.cs" />
+    <None Include="Mappings\StoreMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

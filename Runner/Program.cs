@@ -13,6 +13,7 @@ namespace NHibernateProject
     class Program
     {
         private const string DbFile = "demo.db";
+        private static ISessionFactory _sessionFactory;
 
         private static ISessionFactory CreateSessionFactory()
         {
@@ -25,8 +26,8 @@ namespace NHibernateProject
                                             .Password("1234qwer")))
                 //.Database(SQLiteConfiguration.Standard
                 //    .UsingFile(DbFile))
-                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Employee>())
-                .ExposeConfiguration(BuildSchema)
+                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<MusicFile>())
+                //.ExposeConfiguration(BuildSchema)
                 .BuildSessionFactory();
         }
 
@@ -38,14 +39,71 @@ namespace NHibernateProject
 
             // this NHibernate tool takes a configuration (with mapping info in)
             // and exports a database schema from it
-            new SchemaExport(config).Create(true, true);
+            new SchemaExport(config).Create(false, true);
         }
 
         static void Main(string[] args)
         {
-            var sessionFactory = CreateSessionFactory();
+            _sessionFactory = CreateSessionFactory();
+            addFiles();
 
-            using (var session = sessionFactory.OpenSession())
+            Console.WriteLine("[end]");
+            Console.ReadKey();
+        }
+
+        public static void addFiles()
+        {
+            using (var session = _sessionFactory.OpenSession())
+            {
+
+                using (var transaction = session.BeginTransaction())
+                {
+                    //var res = session.CreateCriteria(typeof(MusicCollection)).List<MusicCollection>();
+
+                    //foreach (var item in res)
+                    //{
+                    //    Console.WriteLine(item.MusicName);
+
+                    //    foreach (var f in item.Files)
+                    //    {
+                    //        Console.WriteLine("\t{0}", f.Name);
+                    //    }
+                    //}
+
+                    var res = session.CreateCriteria<MusicFile>().List<MusicFile>();
+
+                    foreach (var item in res)
+                    {
+                        Console.WriteLine(item.Name);
+                    }
+                }
+
+                using (var transaction = session.BeginTransaction())
+                {
+                    var file = new MusicFile() { Name = "example.mp3", Path = @"c:\myMusic\" };
+                    var file2 = new MusicFile() { Name = "dvpa.flac", Path = @"c:\myMusic\" };
+                    //var file3 = new MusicFile() { Name = "sample.flac", Path = @"c:\myMusic\" };
+
+                    var c = new MusicCollection() { MusicName = "One" };
+
+                    c.AddFile(file);
+                    c.AddFile(file2);
+                    //c.AddFile(file3);
+
+                    //session.SaveOrUpdate(file);
+                    //session.SaveOrUpdate(file2);
+
+                    session.SaveOrUpdate(c);
+
+                    transaction.Commit();
+                }
+            }
+            
+        }
+
+        public static void addSomeThings()
+        {
+            using (var session = _sessionFactory.OpenSession())
             {
                 using (var transaction = session.BeginTransaction())
                 {
@@ -96,9 +154,6 @@ namespace NHibernateProject
                     }
                 }
             }
-
-            Console.WriteLine("[end]");
-            Console.ReadKey();
         }
 
 

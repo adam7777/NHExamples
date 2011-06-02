@@ -11,7 +11,7 @@ namespace Tests
     {
         public TestModel()
         {
-            AddMappingsFromAssembly(typeof(EmployeeMap).Assembly);
+            //AddMappingsFromAssembly(typeof(EmployeeMap).Assembly);
         }
     }
 }
