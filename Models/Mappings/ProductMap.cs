@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Models;
+using Models.Entities;
 using FluentNHibernate.Mapping;
 
 namespace Models

@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner", "Runner\Runner.csproj", "{EDC431DC-5D1A-4CE5-954A-F6FBA07C8386}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{16AA4D3F-E68C-447C-B92D-8EE17E214EFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{EDC431DC-5D1A-4CE5-954A-F6FBA07C8386}.Release|Mixed Platforms.Build.0 = Release|x86
 		{EDC431DC-5D1A-4CE5-954A-F6FBA07C8386}.Release|x86.ActiveCfg = Release|x86
 		{EDC431DC-5D1A-4CE5-954A-F6FBA07C8386}.Release|x86.Build.0 = Release|x86
+		{16AA4D3F-E68C-447C-B92D-8EE17E214EFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16AA4D3F-E68C-447C-B92D-8EE17E214EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16AA4D3F-E68C-447C-B92D-8EE17E214EFD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{16AA4D3F-E68C-447C-B92D-8EE17E214EFD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{16AA4D3F-E68C-447C-B92D-8EE17E214EFD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{16AA4D3F-E68C-447C-B92D-8EE17E214EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16AA4D3F-E68C-447C-B92D-8EE17E214EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16AA4D3F-E68C-447C-B92D-8EE17E214EFD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{16AA4D3F-E68C-447C-B92D-8EE17E214EFD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{16AA4D3F-E68C-447C-B92D-8EE17E214EFD}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

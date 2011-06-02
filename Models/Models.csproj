@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Store.cs" />
     <Compile Include="Mappings\EmployeeMap.cs" />

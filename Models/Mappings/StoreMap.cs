@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Models;
 using FluentNHibernate.Mapping;
+using Models.Entities;
 
 namespace Models
 {

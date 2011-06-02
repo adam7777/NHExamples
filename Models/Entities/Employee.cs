@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Models
+namespace Models.Entities
 {
-    public class Employee
+    public class Employee 
     {
         public virtual int Id { get; private set; }
         public virtual string FirstName { get; set; }
